@@ -3,41 +3,37 @@
 
 using namespace std;
 
-class Rectangle {
-private:
-    double width;
-    double height;
-public:
-    Rectangle(double w, double h) {
-        width = w;
-        height = h;
-    }
+// Функция для вычисления периметра прямоугольника
+float calculateRectanglePerimeter(float length, float width) {
+    return 2 * (length + width);
+}
 
-    double getPerimeter() {
-        return 2 * (width + height);
-    }
+// Функция для вычисления площади прямоугольника
+float calculateRectangleArea(float length, float width) {
+    return length * width;
+}
 
-    double getArea() {
-        return width * height;
-    }
-
-    double getDiagonalLength() {
-        return sqrt(width * width + height * height);
-    }
-};
+// Функция для вычисления длины диагонали прямоугольника
+float calculateRectangleDiagonal(float length, float width) {
+    return sqrt(pow(length, 2) + pow(width, 2));
+}
 
 int main() {
-    double width, height;
+    float length, width;
+    cout << "Введите длину прямоугольника: ";
+    cin >> length;
     cout << "Введите ширину прямоугольника: ";
     cin >> width;
-    cout << "Введите высоту прямоугольника: ";
-    cin >> height;
 
-    Rectangle rect(width, height);
+    // Проверка на отрицательные числа
+    if (length < 0 || width < 0) {
+        cout << "Введите положительные числа!" << endl;
+        return 1;
+    }
 
-    cout << "Периметр прямоугольника: " << rect.getPerimeter() << std::endl;
-    cout << "Площадь прямоугольника: " << rect.getArea() << std::endl;
-    cout << "Длина диагонали прямоугольника: " << rect.getDiagonalLength() << std::endl;
+    cout << "Периметр прямоугольника: " << calculateRectanglePerimeter(length, width) << endl;
+    cout << "Площадь прямоугольника: " << calculateRectangleArea(length, width) << endl;
+    cout << "Длина диагонали прямоугольника: " << calculateRectangleDiagonal(length, width) << endl;
 
     return 0;
 }
