@@ -19,6 +19,7 @@ float calculateTrapezoidMedian(float base1, float base2) {
 }
 
 int main() {
+    setlocale(LC_ALL, "Russian");    
     float side1, side2, base1, base2, height;
     cout << "Введите длину первого бокового ребра трапеции: ";
     cin >> side1;
