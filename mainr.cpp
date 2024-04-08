@@ -18,7 +18,7 @@ float calculateRectangleDiagonal(float length, float width) {
     return sqrt(pow(length, 2) + pow(width, 2));
 }
 
-int main() {
+int main() { // Запрос на ввод данных пользователя
     setlocale(LC_ALL, "Russian");
     float length, width;
     cout << "Введите длину прямоугольника: ";
