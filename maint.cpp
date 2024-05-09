@@ -1,19 +1,19 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <cmath>
 
 using namespace std;
 
-// Функция для вычисления периметра трапеции
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІС‹С‡РёСЃР»РµРЅРёСЏ РїРµСЂРёРјРµС‚СЂР° С‚СЂР°РїРµС†РёРё
 float calculateTrapezoidPerimeter(float side1, float side2, float base1, float base2) {
     return side1 + side2 + base1 + base2;
 }
 
-// Функция для вычисления площади трапеции
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІС‹С‡РёСЃР»РµРЅРёСЏ РїР»РѕС‰Р°РґРё С‚СЂР°РїРµС†РёРё
 float calculateTrapezoidArea(float base1, float base2, float height) {
     return (base1 + base2) * height / 2;
 }
 
-// Функция для вычисления длины средней линии трапеции
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІС‹С‡РёСЃР»РµРЅРёСЏ РґР»РёРЅС‹ СЃСЂРµРґРЅРµР№ Р»РёРЅРёРё С‚СЂР°РїРµС†РёРё
 float calculateTrapezoidMedian(float base1, float base2) {
     return (base1 + base2) / 2;
 }
@@ -21,27 +21,26 @@ float calculateTrapezoidMedian(float base1, float base2) {
 int main() {
     setlocale(LC_ALL, "Russian");
     float side1, side2, base1, base2, height;
-    cout << "Введите длину первого бокового ребра трапеции: ";
+    cout << "Р’РІРµРґРёС‚Рµ РґР»РёРЅСѓ РїРµСЂРІРѕРіРѕ Р±РѕРєРѕРІРѕРіРѕ СЂРµР±СЂР° С‚СЂР°РїРµС†РёРё: ";
     cin >> side1;
-    cout << "Введите длину второго бокового ребра трапеции: ";
+    cout << "Р’РІРµРґРёС‚Рµ РґР»РёРЅСѓ РІС‚РѕСЂРѕРіРѕ Р±РѕРєРѕРІРѕРіРѕ СЂРµР±СЂР° С‚СЂР°РїРµС†РёРё: ";
     cin >> side2;
-    cout << "Введите длину верхнего основания трапеции: ";
+    cout << "Р’РІРµРґРёС‚Рµ РґР»РёРЅСѓ РІРµСЂС…РЅРµРіРѕ РѕСЃРЅРѕРІР°РЅРёСЏ С‚СЂР°РїРµС†РёРё: ";
     cin >> base1;
-    cout << "Введите длину нижнего основания трапеции: ";
+    cout << "Р’РІРµРґРёС‚Рµ РґР»РёРЅСѓ РЅРёР¶РЅРµРіРѕ РѕСЃРЅРѕРІР°РЅРёСЏ С‚СЂР°РїРµС†РёРё: ";
     cin >> base2;
-    cout << "Введите высоту трапеции: ";
+    cout << "Р’РІРµРґРёС‚Рµ РІС‹СЃРѕС‚Сѓ С‚СЂР°РїРµС†РёРё: ";
     cin >> height;
 
-    // Проверка на отрицательные числа
+    // РџСЂРѕРІРµСЂРєР° РЅР° РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Рµ С‡РёСЃР»Р°
     if (side1 < 0 || side2 < 0 || base1 < 0 || base2 < 0 || height < 0) {
-        cout << "Введите положительные числа!" << endl;
+        cout << "Р’РІРµРґРёС‚Рµ РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рµ С‡РёСЃР»Р°!" << endl;
         return 1;
     }
 
-    cout << "Периметр трапеции: " << calculateTrapezoidPerimeter(side1, side2, base1, base2) << endl;
-    cout << "Площадь трапеции: " << calculateTrapezoidArea(base1, base2, height) << endl;
-    cout << "Длина средней линии трапеции: " << calculateTrapezoidMedian(base1, base2) << endl;
+    cout << "РџРµСЂРёРјРµС‚СЂ С‚СЂР°РїРµС†РёРё: " << calculateTrapezoidPerimeter(side1, side2, base1, base2) << endl;
+    cout << "РџР»РѕС‰Р°РґСЊ С‚СЂР°РїРµС†РёРё: " << calculateTrapezoidArea(base1, base2, height) << endl;
+    cout << "Р”Р»РёРЅР° СЃСЂРµРґРЅРµР№ Р»РёРЅРёРё С‚СЂР°РїРµС†РёРё: " << calculateTrapezoidMedian(base1, base2) << endl;
 
     return 0;
 }
-
