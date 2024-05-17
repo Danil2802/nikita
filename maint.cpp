@@ -1,7 +1,19 @@
 ﻿#include <iostream>
 #include <cmath>
+#include <algorithm>
 
 using namespace std;
+
+// Функция для проверки возможности построения трапеции
+bool isTrapezoidPossible(float a, float b, float c, float d) {
+    // Сортируем стороны по возрастанию
+    float sides[4] = { a, b, c, d };
+    sort(sides, sides + 4);
+
+    // Проверяем условие для возможности построения трапеции
+    // Сумма двух наименьших сторон должна быть больше одной из оставшихся сторон
+    return (sides[0] + sides[1] > sides[2]) && (sides[1] + sides[2] > sides[3]);
+}
 
 // Функция для вычисления периметра трапеции
 float calculateTrapezoidPerimeter(float side1, float side2, float base1, float base2) {
@@ -38,8 +50,15 @@ int main() {
         return 1;
     }
 
+    // Проверка на соотношение высоты и боковой стороны
     if (height > side1 || height > side2) {
-        cout << "Высота должна быть меньше боковых сторон!" << endl;
+        cout << "Высота должна быть меньше боковой стороны!" << endl;
+        return 1;
+    }
+
+    // Проверка на возможность построения трапеции
+    if (!isTrapezoidPossible(side1, side2, base1, base2)) {
+        cout << "Трапеция невозможна." << endl;
         return 1;
     }
 
