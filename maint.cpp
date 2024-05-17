@@ -1,4 +1,4 @@
-﻿﻿#include <iostream>
+﻿#include <iostream>
 #include <cmath>
 
 using namespace std;
@@ -35,6 +35,11 @@ int main() {
     // Проверка на отрицательные числа
     if (side1 < 0 || side2 < 0 || base1 < 0 || base2 < 0 || height < 0) {
         cout << "Введите положительные числа!" << endl;
+        return 1;
+    }
+
+    if (height > side1 || height > side2) {
+        cout << "Высота должна быть меньше боковых сторон!" << endl;
         return 1;
     }
 
